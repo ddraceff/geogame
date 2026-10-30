@@ -6,7 +6,7 @@
 <link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icons/icon-192.png"><link rel="apple-touch-icon" href="icons/icon-180.png">
 <script>try{if(localStorage.getItem('geo_ui')!=='classic')document.documentElement.classList.add('v2')}catch(e){document.documentElement.classList.add('v2')}</script>
 <title>Де це?</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;600;700&family=Unbounded:wght@700;900&family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--abyss:#07202f;--deep:#0d3a52;--foam:#d4ecf0;--sand:#ead9a6;--brass:#e0a93b;--brass-d:#b9811c;--ink:#0a1a24;
 --serif:'Cormorant Garamond',Georgia,serif;--sans:Manrope,system-ui,-apple-system,'Segoe UI',sans-serif;
@@ -114,29 +114,59 @@ label{margin-bottom:4px}input{padding:10px 14px;margin-bottom:12px}#menu .btn{pa
 .sw input:checked::after{transform:translateX(20px)}
 .set .btn{width:100%;padding:14px;font-size:18px}
 
-/* ===== нове оформлення: мінімалізм ===== */
-html.v2{--brass:#111;--brass-d:#000;--sand:#111;--foam:#111;--serif:Manrope,system-ui,-apple-system,'Segoe UI',sans-serif}
-html.v2,html.v2 body{background:#dde4e8}
-html.v2 #sea{left:0;top:0;animation:none;background-image:none!important;background-color:#dde4e8!important}
+/* ===== нове оформлення: атлас-стікер ===== */
+html.v2{--ink:#14122b;--paper:#fff7e0;--ocean:#2f4df0;--sun:#ffd23f;--mint:#7be8b8;--pink:#ff9ec7;--muted:#4a4670;--brass:#e0245e;--brass-d:#e0245e;--sand:#14122b;--foam:#14122b;--serif:Unbounded,Onest,system-ui,sans-serif;--sans:Onest,Manrope,system-ui,-apple-system,'Segoe UI',sans-serif}
+html.v2,html.v2 body{background:var(--ocean)}
+html.v2 #sea{left:0;top:0;animation:none;background-color:var(--ocean)!important;background-image:radial-gradient(rgba(255,255,255,.2) 1.5px,transparent 1.7px)!important;background-size:24px 24px!important}
 html.v2 #vignette{display:none}
 html.v2 #menu{background:none}
-html.v2 h1{font-weight:800;letter-spacing:-.05em;line-height:.9;font-size:clamp(48px,8vw,96px)}
-html.v2 .tag,html.v2 label,html.v2 .card p,html.v2 #ask small,html.v2 #rd,html.v2 .note,html.v2 .sw small,html.v2 .card .on{color:#6b747b}
-html.v2 .sw b{color:#111}
-html.v2 #nick{background:#fff;border-color:#cfd6db;border-radius:8px}
-html.v2 .btn:not(.ghost){background:#111;color:#fff;border-radius:8px;box-shadow:none}
-html.v2 .btn:not(.ghost):hover:not(:disabled){background:#333;box-shadow:none;transform:none}
-html.v2 .ghost,html.v2 #mname,html.v2 #hudPlayers,html.v2 #res,html.v2 #ask,html.v2 .card,html.v2 .set{background:#fff;border:1px solid #d5dbe0;border-radius:8px;box-shadow:none}
-html.v2 #bar{height:3px}
-html.v2 .card:hover{border-color:#111}
-html.v2 #ask .t,html.v2 #rp{font-weight:700}
-html.v2 .ic [fill="#e0a93b"],html.v2 .mi [fill="#e0a93b"]{fill:#111}
-html.v2 .ic [fill^="rgba(224"]{fill:rgba(0,0,0,.08)}
-html.v2 .ic [fill="#07202f"]{fill:#fff}
-html.v2 .ic [stroke="#07202f"]{stroke:#fff}
-html.v2 .ic [fill="#2b8bd6"]{fill:#c9d0d5}
-html.v2 .sw input{background:#cfd6db}
-html.v2 .sw input:checked{background:#111}
+html.v2 #menu .box{width:min(540px,88vw);padding:30px 30px 32px;background:var(--paper);border:3px solid var(--ink);border-radius:22px;box-shadow:8px 8px 0 var(--ink)}
+html.v2 h1{font-weight:900;font-size:clamp(48px,10vw,100px);line-height:1;letter-spacing:-.04em;margin-bottom:14px;text-shadow:4px 4px 0 var(--pink)}
+html.v2 .tag{color:var(--muted);font-weight:500;max-width:34ch;margin-bottom:26px}
+html.v2 label{color:var(--ink);font-weight:700}
+html.v2 #nick{background:#fff;border:3px solid var(--ink);border-radius:12px;font-weight:700;color:var(--ink)}
+html.v2 input:focus,html.v2 button:focus-visible{outline:3px solid var(--brass);outline-offset:3px}
+html.v2 .btn:not(.ghost){background:var(--sun);color:var(--ink);border:3px solid var(--ink);border-radius:14px;font-weight:800;box-shadow:0 5px 0 var(--ink);transition:transform .08s,box-shadow .08s}
+html.v2 .btn:not(.ghost):hover:not(:disabled){background:#ffdd5e;transform:none;box-shadow:0 5px 0 var(--ink)}
+html.v2 .btn:not(.ghost):active:not(:disabled){transform:translateY(4px);box-shadow:0 1px 0 var(--ink)}
+html.v2 .btn:disabled{opacity:.55}
+html.v2 #confirm{background:var(--mint)}
+html.v2 .ghost,html.v2 #mname,html.v2 #hudPlayers,html.v2 #res,html.v2 #ask,html.v2 .card,html.v2 .set{background:var(--paper);color:var(--ink);border:3px solid var(--ink);border-radius:14px;box-shadow:4px 4px 0 var(--ink)}
+html.v2 .ghost{font-weight:700}
+html.v2 .ghost:hover{background:#fff}
+html.v2 #ask{padding:10px 22px 12px}
+html.v2 #ask .t{font-size:clamp(18px,4.2vw,30px);font-weight:900;letter-spacing:-.02em}
+html.v2 #ask img{border:2px solid var(--ink);border-radius:4px}
+html.v2 #ask small,html.v2 #rd,html.v2 .sw small,html.v2 .card p{color:var(--muted)}
+html.v2 #bar{height:8px;background:var(--sun);box-shadow:0 2px 0 var(--ink)}
+html.v2 #rp{font-weight:900}
+html.v2 #rn{font-weight:700}
+html.v2 #hudPlayers li.me b{color:var(--brass)}
+html.v2 #hudPlayers.open{background:var(--paper)}
+html.v2 #pick{background:rgba(47,77,240,.84)}
+html.v2 #pick h2{color:#fff;font-weight:900;font-size:clamp(26px,6.5vw,42px);letter-spacing:-.03em;text-shadow:3px 3px 0 var(--ink)}
+html.v2 #pick .note{color:#fff;font-weight:600}
+html.v2 .card{border-radius:20px;box-shadow:6px 6px 0 var(--ink);transition:transform .12s,box-shadow .12s}
+html.v2 .card:hover{transform:translate(-3px,-3px);border-color:var(--ink);box-shadow:9px 9px 0 var(--ink)}
+html.v2 .card .ic{width:68px;height:68px;padding:10px;border:3px solid var(--ink);border-radius:16px;background:var(--sun)}
+html.v2 .card:nth-child(2) .ic{background:var(--mint)}
+html.v2 .card:nth-child(3) .ic{background:var(--pink)}
+html.v2 .card h3{font-weight:800;font-size:19px;letter-spacing:-.01em;margin:12px 0 6px}
+html.v2 .card .on{display:inline-block;justify-self:start;padding:2px 10px;border:2px solid var(--ink);border-radius:99px;background:var(--mint);color:var(--ink);font-weight:700}
+html.v2 .ic [fill="#e0a93b"],html.v2 .mi [fill="#e0a93b"]{fill:#ff4d6d}
+html.v2 .card[data-m=flag] .ic [fill="#e0a93b"]{fill:var(--sun)}
+html.v2 .ic [fill^="rgba(224"],html.v2 .mi [fill^="rgba(224"]{fill:#fff}
+html.v2 .ic [fill="#07202f"],html.v2 .mi [fill="#07202f"]{fill:#fff}
+html.v2 .ic [stroke="#07202f"],html.v2 .mi [stroke="#07202f"]{stroke:var(--ink)}
+html.v2 .ic [fill="#2b8bd6"]{fill:var(--ocean)}
+html.v2 #settings{background:rgba(20,18,43,.55)}
+html.v2 .set{border-radius:20px;box-shadow:6px 6px 0 var(--ink)}
+html.v2 .set h3{font-weight:800;font-size:22px}
+html.v2 .sw input{background:#d9d4ee;box-shadow:0 0 0 2.5px var(--ink)}
+html.v2 .sw input::after{box-shadow:0 0 0 2px var(--ink)}
+html.v2 .sw input:checked{background:var(--mint)}
+@media(max-width:700px){html.v2 #menu .box{padding:22px}html.v2 .card{grid-template-columns:60px 1fr}html.v2 .card .ic{width:60px;height:60px;padding:8px}html.v2 .card h3{margin:0 0 4px}}
+@media(max-height:500px){html.v2 h1{font-size:40px;margin-bottom:8px}html.v2 #menu .box{width:min(440px,70vw);padding:16px 20px}}
 </style></head><body>
 <div id="sea"></div><canvas id="map"></canvas><div id="vignette"></div>
 <section class="screen on" id="menu"><div class="box">
@@ -181,12 +211,12 @@ const toast=t=>{const e=$('toast');e.textContent=t;e.style.display='block';setTi
 const MY=la=>{la=Math.max(-80,Math.min(83,la))*Math.PI/180;return .5-Math.log(Math.tan(Math.PI/4+la/2))/(2*Math.PI)},MX=lo=>lo/360+.5;
 function mkPath(polys){const p=new Path2D;let x0=9,y0=9,x1=-9,y1=-9;for(const poly of polys)for(const r of poly){for(let i=0;i<r.length;i+=2){const x=MX(r[i]),y=MY(r[i+1]);i?p.lineTo(x,y):p.moveTo(x,y);if(x<x0)x0=x;if(x>x1)x1=x;if(y<y0)y0=y;if(y>y1)y1=y}p.closePath()}p.bb=[x0,y0,x1,y1];return p}
 const tints=['#cfe3a8','#e6d9a2','#bfd8c4','#e8cfa8','#c8d6ea','#e2c4d6'],byI={};let C=[],REG=[],UA=null;
-(async()=>{try{const g=await (await fetch('data/geo.json')).json();g.countries.concat(g.regions).forEach(c=>{c.path=mkPath(c.p);byI[c.i]=c});C=g.countries.filter(c=>c.i!=='ua');REG=g.regions;UA=byI.ua;$('play').disabled=false;$('play').textContent='Грати'}catch(e){$('play').textContent='Не вдалося завантажити мапу'}})();
-const PAL1={a:'#b9c4a0',b:'#e4dcb0',c:'#d2caa0',d:'#dfe6bf',ln:'#6d6a50',rl:'#4b5d3a',dash:'#fff',t:tints},PAL2={a:'#f1f3f5',b:'#ffffff',c:'#f4f6f7',d:'#ffffff',ln:'#aeb7bd',rl:'#8d979e',dash:'#111',t:['#ffffff','#f5f7f8','#fbfbfb','#f3f5f6','#ffffff','#f7f8f9']};
+(async()=>{try{const g=await (await fetch('data/geo.json')).json();g.countries.concat(g.regions).forEach(c=>{c.path=mkPath(c.p);byI[c.i]=c});C=g.countries.filter(c=>c.i!=='ua');REG=g.regions;UA=byI.ua;$('play').disabled=false;$('play').textContent='Грати';view=homeView();clamp();draw()}catch(e){$('play').textContent='Не вдалося завантажити мапу'}})();
+const PAL1={a:'#b9c4a0',b:'#e4dcb0',c:'#d2caa0',d:'#dfe6bf',ln:'#6d6a50',rl:'#4b5d3a',dash:'#fff',t:tints},PAL2={a:'#c9d2fa',b:'#fff1d6',c:'#fff1d6',d:'#fff1d6',ln:'#14122b',rl:'#14122b',dash:'#14122b',t:['#ffe566','#8ef0c0','#ffb38a','#ff9ec7','#c3b1ff','#d4f27a']};
 let pending=false,thr=6,VX0=0,VX1=1,VY0=0,VY1=1,_raf=0;
 let kind=null,view={x:.52,y:.33,k:1},W=0,H=0,dpr=1,state='idle',me=null,mark=null,results=null,tgt=null,es=null,off=0,endsAt=0,dur=1,answered=false,anim=null;
 const cv=$('map'),cx=cv.getContext('2d');
-function resize(){dpr=Math.min(devicePixelRatio||1,2);W=innerWidth;H=innerHeight;cv.width=W*dpr;cv.height=H*dpr;if(kind){clamp();render()}}
+function resize(){dpr=Math.min(devicePixelRatio||1,2);W=innerWidth;H=innerHeight;cv.width=W*dpr;cv.height=H*dpr;if(kind||UA){if(!kind)view=homeView();clamp();render()}}
 function clamp(){const reg=kind==='region',l=reg?{x0:MX(18),x1:MX(44),y0:MY(54),y1:MY(42)}:{x0:0,x1:1,y0:MY(83),y1:MY(-58)};
 view.k=Math.max(Math.min(view.k,W*60),Math.max(W/(l.x1-l.x0),H/(l.y1-l.y0))*(reg?.9:1));
 const hw=W/2/view.k,hh=H/2/view.k;view.x=Math.max(l.x0+hw,Math.min(l.x1-hw,view.x));view.y=Math.max(l.y0+hh,Math.min(l.y1-hh,view.y));
@@ -197,13 +227,13 @@ function fill(p,col,lw,st){const b=p.bb;if(b&&(b[2]<VX0||b[0]>VX1||b[3]<VY0||b[1
 function draw(){if(_raf)return;_raf=requestAnimationFrame(()=>{_raf=0;render()})}
 function render(){const P=ui2?PAL2:PAL1,hw=W/2/view.k,hh=H/2/view.k,mg=3/view.k;VX0=view.x-hw-mg;VX1=view.x+hw+mg;VY0=view.y-hh-mg;VY1=view.y+hh+mg;cx.setTransform(dpr,0,0,dpr,0,0);cx.clearRect(0,0,W,H);
 cx.setTransform(dpr*view.k,0,0,dpr*view.k,dpr*(W/2-view.x*view.k),dpr*(H/2-view.y*view.k));cx.lineJoin='round';
-const reg=kind==='region';C.forEach(c=>fill(c.path,reg?P.a:(c.s?P.b:P.c),.7,P.ln));
+const reg=kind==='region';C.forEach((c,i)=>fill(c.path,reg?P.a:(ui2&&c.s?P.t[i%6]:(c.s?P.b:P.c)),.7,P.ln));
 fill(UA.path,reg?P.d:P.b,.7,P.ln);if(reg)REG.forEach((r,i)=>fill(r.path,P.t[i%6],.9,P.rl));
 if(tgt&&state==='res'){fill(tgt.path,'rgba(61,220,132,.85)',2.2,'#0b5a2e');const m=results&&results.find(r=>r.id===me);
 if(m&&m.near){cx.beginPath();cx.moveTo(MX(m.lo),MY(m.la));cx.lineTo(MX(m.near[0]),MY(m.near[1]));cx.setLineDash([6/view.k,5/view.k]);cx.lineWidth=2.5/view.k;cx.strokeStyle=P.dash;cx.stroke();cx.setLineDash([])}}
 cx.setTransform(dpr,0,0,dpr,0,0);
 const pin=(lo,la,col,r,name)=>{const[x,y]=w2s(MX(lo),MY(la));cx.beginPath();cx.arc(x,y,r,0,7);cx.fillStyle=col;cx.fill();cx.lineWidth=3;cx.strokeStyle='#fff';cx.stroke();
-if(name){cx.font='700 12px Manrope,system-ui,sans-serif';cx.textAlign='center';cx.lineWidth=3;cx.strokeStyle='rgba(5,22,34,.9)';cx.strokeText(name,x,y-r-6);cx.fillStyle='#fff';cx.fillText(name,x,y-r-6)}};
+if(name){cx.font='700 12px Onest,Manrope,system-ui,sans-serif';cx.textAlign='center';cx.lineWidth=3;cx.strokeStyle='rgba(5,22,34,.9)';cx.strokeText(name,x,y-r-6);cx.fillStyle='#fff';cx.fillText(name,x,y-r-6)}};
 if(state==='res'&&results){for(const r of results)if(r.lo!=null&&r.id!==me)pin(r.lo,r.la,r.color,6,r.name);const m=results.find(r=>r.id===me);if(m&&m.lo!=null)pin(m.lo,m.la,m.color,9,m.name)}
 else if(mark)pin(mark.lo,mark.la,pending?'#e0a93b':'#ff4d4d',pending?11:9)}
 function flyTo(t){const f={...view},t0=performance.now();anim=t0;const step=n=>{if(anim!==t0)return;const p=Math.min(1,(n-t0)/650),e=1-Math.pow(1-p,3);view.x=f.x+(t.x-f.x)*e;view.y=f.y+(t.y-f.y)*e;view.k=f.k*Math.pow(t.k/f.k,e);clamp();draw();if(p<1)requestAnimationFrame(step)};requestAnimationFrame(step)}
@@ -241,7 +271,7 @@ document.querySelectorAll('.card').forEach(c=>c.onclick=()=>join(c.dataset.m))}c
 let poll=setInterval(()=>{if($('pick').classList.contains('on'))loadCards()},3000);
 $('play').onclick=()=>{ls.set('geo_nick',$('nick').value.trim());$('menu').classList.remove('on');$('pick').classList.add('on');loadCards()};
 $('toMenu').onclick=()=>{$('pick').classList.remove('on');$('menu').classList.add('on')};
-$('back').onclick=()=>{if(es)es.close();es=null;state='idle';kind=null;$('game').classList.remove('on');$('pick').classList.add('on');loadCards()};
+$('back').onclick=()=>{if(es)es.close();es=null;state='idle';kind=null;mark=results=tgt=null;clearPending();view=homeView();clamp();draw();$('game').classList.remove('on');$('pick').classList.add('on');loadCards()};
 /* ---- ввід ---- */
 const ptrs=new Map();let moved=0;
 cv.addEventListener('pointerdown',e=>{cv.setPointerCapture(e.pointerId);ptrs.set(e.pointerId,[e.clientX,e.clientY]);moved=0;anim=null;thr=e.pointerType==='touch'?12:6;$('hudPlayers').classList.remove('open')});
@@ -258,7 +288,7 @@ $('chip').onclick=()=>$('hudPlayers').classList.toggle('open');
 $('nick').addEventListener('keydown',e=>{if(e.key==='Enter'&&!$('play').disabled)$('play').click()});
 cv.addEventListener('contextmenu',e=>e.preventDefault());document.addEventListener('gesturestart',e=>e.preventDefault());
 const wake=()=>{if(!document.hidden&&kind&&(!es||es.readyState===2))connect()};document.addEventListener('visibilitychange',wake);addEventListener('pageshow',wake);
-function applyUI(){document.documentElement.classList.toggle('v2',ui2);$('uiToggle').checked=ui2;document.querySelector('meta[name=theme-color]').content=ui2?'#dde4e8':'#07202f';if(kind)draw()}
+function applyUI(){document.documentElement.classList.toggle('v2',ui2);$('uiToggle').checked=ui2;document.querySelector('meta[name=theme-color]').content=ui2?'#2f4df0':'#07202f';if(kind)draw()}
 $('uiToggle').onchange=e=>{ui2=e.target.checked;ls.set('geo_ui',ui2?'v2':'classic');applyUI()};
 document.querySelectorAll('.gear').forEach(b=>b.onclick=()=>$('settings').classList.add('on'));
 const closeSet=()=>$('settings').classList.remove('on');$('setClose').onclick=closeSet;$('settings').addEventListener('click',e=>{if(e.target.id==='settings')closeSet()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeSet()});applyUI();
